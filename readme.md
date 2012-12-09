@@ -1,7 +1,8 @@
 #CalTip - Yet Another jQuery ToolTip plugin
+
 I know the world probably doesn't need yet another jQuery tooltip plugin. But recently while working on a project, I became frustrated trying to find just the right tooltip that was super-simple to implement, yet allowed for some customization when I needed it. Most were either overly-bloated, or too simple. 
 
-At any rate, I wrote my own, and I'm sharing it here if it's helpful.
+At any rate, I wrote my own, and I'm sharing it here if it's helpful. 
 
 Features:
 * Supports tap event for mobile touch-screen devices
@@ -9,6 +10,10 @@ Features:
 * Simple straightforward implementation, but highly customizable
 * Accepts HTML, iframe embed code, etc.
 * Includes demo file
+
+This is what it looks like with default settings.
+
+![Example of CalTip](https://raw.github.com/jrue/CalTip/master/demo/example.jpg "Example of CalTip tooltip")
 
 ##Installation
 Requires jQuery 1.7.2 or later, which I didn't include in this repo.
