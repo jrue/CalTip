@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CalTip | Another jQuery Tooltip</title>
+  <style type="text/css" media="screen">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height: 1;}ol, ul{list-style:none;} blockquote, q{quotes:none;} blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;} :focus{outline:0;} ins{text-decoration:none;} del{text-decoration:line-through;} table{border-collapse:collapse; border-spacing:0;}
+    body{
+      background: darkgray;
+    }
+    #container{
+      width: 700px;
+      margin: 0 auto;
+      border: 1px solid black;
+      padding: 20px;
+      background: white;
+    }
+    h1{
+      font:bold 24px/30px Helvetica, Arial, sans-serif;
+      text-align:center;
+    }
+    h2{
+      font:bold 18px/24px Helvetica, Arial, sans-serif;
+      text-align:center;
+      margin:0 0 20px;
+    }
+    .code{
+      border:1px dotted #999;
+      padding: 20px;
+      margin:5px 0;
+    }
+    .code a{
+      font:bold 16px/20px Helvetica, Arial, sans-serif;
+      text-align: center;
+      display:inline-block;
+      margin:10px 0;
+    }
+    .code pre{
+      font:normal 12px/14px Consolas, Monaco, "Courier New", Courier, monospace;
+      background-color: #ddd;
+      padding:10px;
+    }
+    
+    .code p{
+      font:normal 11px/14px Verdana, Helvetica, Arial, sans-serif;
+      margin:5px 0;
+    }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="../src/caltip.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function($){
+
+        $('#firstexample').caltip();
+        $('#secondexample').caltip('This is showing an example for demo 2.');
+        $('#thirdexample').caltip({
+          content :'This is probably the most common implementation', 
+          title   :'Typical Example'
+        });
+        $('#fourthexample').caltip({
+          titlefont   : 'bold 20px/20px serif',
+          font        : 'normal 12px/16px serif',
+          padding     : '15px',
+          titlecolor  : '#ff0000',
+          bodycolor   : '#000000',
+          border      : '2px solid #000',
+          background  : '#9fa6de',
+          boxshadow   : '0 10px 17px rgba(0, 0, 0, 0.5)',
+          zindex      : 9999,
+          width       : 400,
+          height      : 'auto',
+          title       : 'A custom tooltip',
+          content     : 'This tool tip has been customized in every way possible',
+          notch       : true, //coming soon!
+          dataAttr    : false,
+          offsetleft  : 245,
+          offsettop   : 55,
+          mouseevent  : 'mouseover',
+          callback    : function(){ 
+            $('#fourthexample').css('color', 'red'); 
+          }
+        });
+    });
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h1>CalTip Demos</h1>
+    <h2>What did you say world? You want <em>another</em> jQuery tooltip? You got it.</h2>
+    <div class="code">
+      <a id="firstexample" href="#" data-tooltip="This is text that is inside a data-tooltip attribute">Demo 1: No arguments</a>
+      <p>If nothing is specified, the script uses the text from the <code>data-tooltip</code> attribute (if present), or if not present, then it will use the text from the actual element as a fallback.</p>
+      <pre>
+$('a').caltip();</pre>
+    </div>
+    <div class="code">
+      <a id="secondexample" href="#">Demo 2: Simple string argument</a>
+      <p>You can provide a simple string of text.</p>
+      <pre>
+$('a').caltip('This is showing an example for demo 2.');</pre>
+    </div>
+    <div class="code">
+      <a id="thirdexample" href="#">Demo 3: Typical implementation with content and title</a>
+      <p>This is probably the most typical implementation of the tooltip. Just provide a title and content.</p>
+      <pre>
+$('a').caltip({
+  content :'This is probably the most common implementation', 
+  title   :'Typical Example'
+});</pre>
+    </div>
+    <div class="code">
+      <a id="fourthexample" href="#">Demo 4: Custom</a>
+       <p>This example shows all of the various options implemented, including an optional callback function which executes after the tooltip has been activated. In this example, it turns the link CSS to red. It also demonstrates the offset property, which pushes the tooltip from its default location.</p>
+      <pre>
+$('a').caltip({
+  titlefont   : 'bold 20px/20px serif',
+  font        : 'normal 12px/16px serif',
+  padding     : '15px',
+  titlecolor  : '#ff0000',
+  bodycolor   : '#000000',
+  border      : '2px solid #000',
+  background  : '#9fa6de',
+  boxshadow   : '0 10px 17px rgba(0, 0, 0, 0.5)',
+  zindex      : 9999,
+  width       : 400,
+  height      : 'auto',
+  title       : 'A custom tooltip',
+  content     : 'This tool tip has been customized in every way possible',
+  notch       : true, //coming soon!
+  dataAttr    : false,
+  offsetleft  : 245,
+  offsettop   : 55,
+  mouseevent  : 'mouseover',
+  callback    : function(){ 
+    $('#fourthexample').css('color', 'red'); 
+  }
+});</pre>
+    </div>
+  </div>
+</body>
+</html>
