@@ -271,7 +271,6 @@
          
    if(top + $element.parent().offset().top < 0){
     top = $element.position().top + $element.outerHeight();
-    switchNotch();
    }
          
    return top;   
