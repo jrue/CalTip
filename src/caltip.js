@@ -211,6 +211,28 @@
     box.remove();
    });
   }
+  
+  /**
+   * This this a PUBLIC function to change the title.
+   *
+   * @example element.data('caltip').changeTitle("Some New Title")
+   * @param {string} new title
+   */
+  plugin.changeTitle = function(newtitle){
+   $('h2', box).html(newtitle);
+  }
+  
+  /**
+   * This this a PUBLIC function to change the content
+   *
+   * @example element.data('caltip').changeContent("Some New Title")
+   * @param {string} new content
+   */
+  plugin.changeContent = function(newcontent){
+   var storeTitle = $('h2', box);
+   box.empty();
+   box.append(storeTitle).append(newcontent.toString());
+  }
    
   /**
    * Repositions the tooltip (box) based on the element's location. It also 
