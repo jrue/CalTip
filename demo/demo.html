@@ -80,6 +80,15 @@
             $('#fourthexample').css('color', 'red'); 
           }
         });
+        $('#fifthexample').caltip({
+          content : 'Some example initial content here.',
+          title   : 'Here is the initial title'
+        });
+        $('#fifthexamplebutton').on('click', function(){
+          $('#fifthexample').data('caltip').changeTitle('New Title!!!!');
+          $('#fifthexample').data('caltip').changeContent('And some new content!!!');
+        })
+        
     });
   </script>
 </head>
@@ -134,6 +143,20 @@ $('a').caltip({
   callback    : function(){ 
     $('#fourthexample').css('color', 'red'); 
   }
+});</pre>
+    </div>
+    <div class="code">
+      <a id="fifthexample" href="#">Demo 5: Change Content after initializing CalTip</a><br />
+      <button id="fifthexamplebutton">Transmogrify!</button>
+      <p>In this example, we change the tooltip content after the initial call to the tooltip. Look at the tooltip, then click the button, and see that the tooltip content and title have changed. You will need to call this twice in separate statement (no chaining) or you can assign to a variable.</p>
+      <pre>
+$('a').caltip({
+  content : 'Some example initial content here.',
+  title   : 'Here is the initial title'
+});
+$('button').on('click', function(){
+  $('a').data('caltip').changeTitle('New Title!!!!');
+  $('a').data('caltip').changeContent('And some new content!!!');
 });</pre>
     </div>
   </div>

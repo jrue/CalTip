@@ -70,5 +70,20 @@ The `dataAttr` property can be either a Boolean or a String. If a string is prov
 
 The boxshadow property can also be a Boolean false for none. (Boxshadows degrade gracefully in pre IE9, meaning they just don't show up)
 
+##Change Content After Plugin is Called
+
+You can change the content after the plugin is called by using one or both of two public functions `changeTitle(title)` or `changeContent(content)`. You need to use jQuery's `data` method to access the caltip properties on the element you've called CalTip first.
+```javascript
+//initial call
+$('img').caltip({
+    title   : 'Initial title',
+    content : 'Initial content'
+});
+
+//you would call these later to change the tooltip, like after an event or button click.
+$('img').data('caltip').changeTitle('New Title');
+$('img').data('caltip').changeContent('And some new content');
+```
+
 ##Notes about Tap event
 This tooltip automatically includes a tap event to activate tooltips on touchscreen devices. Once the user initiates the tooltip, the tap event is removed, rendering any previous click or href events usable on a second tap. The user can also tap anywhere outside the tooltip to close the tooltip.
