@@ -15,8 +15,7 @@
 
  //some constants
  var W    = $(window).width(),
-     H    = $(window).height(),
-     IE   = $.browser.msie && /MSIE\s(5\.5|6\.)/.test(navigator.userAgent);
+     H    = $(window).height();
   
   /**
    * This function enclosure is called for each DOM element the plugin
@@ -43,6 +42,7 @@
        border      : '1px solid #999',
        background  : '#ffffff',
        boxshadow   : '0 2px 4px rgba(0, 0, 0, 0.3)',
+       borderRadius: '0px',
        zindex      : 9999,
        width       : 300,
        height      : 'auto',
@@ -100,21 +100,24 @@
    plugin.settings = $.extend({}, defaults, options);
       
    box.css({
-    'position'           : 'absolute',
-    'font'               : plugin.settings.font,
-    'color'              : plugin.settings.bodycolor,
-    'padding'            : plugin.settings.padding,
-    'border'             : plugin.settings.border,
-    'background'         : plugin.settings.background,
-    '-moz-box-shadow'    : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
-    '-webkit-box-shadow' : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
-    'box-shadow'         : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
-    'max-width'          : plugin.settings.width,
-    'z-index'            : plugin.settings.zindex,
-    'word-wrap'          : 'break-word',
-    'text-align'         : 'left',
-    'width'              : 'auto',
-    'opacity'            : '0'
+    'position'             : 'absolute',
+    'font'                 : plugin.settings.font,
+    'color'                : plugin.settings.bodycolor,
+    'padding'              : plugin.settings.padding,
+    'border'               : plugin.settings.border,
+    'background'           : plugin.settings.background,
+    '-moz-box-shadow'      : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
+    '-webkit-box-shadow'   : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
+    'box-shadow'           : plugin.settings.boxshadow ? plugin.settings.boxshadow : 'none',
+    '-moz-border-radius'   : plugin.settings.borderRadius ? plugin.settings.borderRadius : '0px',
+    '-webkit-border-radius': plugin.settings.borderRadius ? plugin.settings.borderRadius : '0px',
+    'border-radius'        : plugin.settings.borderRadius ? plugin.settings.borderRadius : '0px',
+    'max-width'            : plugin.settings.width,
+    'z-index'              : plugin.settings.zindex,
+    'word-wrap'            : 'break-word',
+    'text-align'           : 'left',
+    'width'                : 'auto',
+    'opacity'              : '0'
    });
     
    //set optional title
