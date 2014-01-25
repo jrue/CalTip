@@ -185,9 +185,13 @@
    evt = !evt ? window.event : evt;
    evt.cancelBubble = true;
    evt.stopPropagation();
+
+   //get all events, and see if user added a click event
+   var events = $._data(elm.get(0), 'events'); 
+   var hasEvents = (events.click != null);
                        
    //remove touch event if there is an <a> tag, or there is already a click event
-   if(((elm.attr('href') != null && elm.attr('href') != '#') || elm.data('events').hasOwnProperty('click')) && clickflag == false){
+   if(((elm.attr('href') != null && elm.attr('href') != '#') || hasEvents) && clickflag == false){
     elm.off('touchstart');
     elm.on('click', function(e){plugin.destroyToolTip(elm, e)});
     clickflag = true;
